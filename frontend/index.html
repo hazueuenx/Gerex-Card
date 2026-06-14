@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kartu Profil Maba</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <section class="body-section">
+            <section class="left-section">
+                <h1>MabaSearch</h1>
+                <p>Cari teman seangkatanmu!</p>
+
+                <div class="search-box"> 
+                    <input
+                        type="text"
+                        id="inputNama"
+                        class="search-input"
+                        placeholder="Cari nama mahasiswa..."
+                        autocomplete="off"
+                    />
+
+                    <div class="filter-row">
+                        <select id="filterJurusan" class="filter-select">
+                            <option value="semua">Semua</option>
+                        </select>
+                        <select id="filterGugus" class="filter-select">
+                            <option value="semua">Semua</option>
+                        </select>
+                        <button id="btnCari" class="btn-cari">Cari</button>
+                        <button id="btnReset" class="btn-reset">Reset</button>
+                    </div>
+                </div>
+            </section>
+
+            <main class="main">
+                <div id="statusBar" class="status-bar hidden">
+                    <span id="statusText"></span>
+                </div>
+
+                <div id="cardGrid" class="card-grid"></div>
+
+                <div id="emptyState" class="empty-state hidden">
+                    <span class="empty-icon"></span>
+                    <p>Mahasiswa tidak ditemukan.</p>
+                    <small>Coba ubah kata kunci atau filter pencarian.</small>
+                </div>
+
+                <div id="loadingState" class="loading-state">
+                    <div class="spinner"></div>
+                    <p>Memuat data...</p>
+                </div>
+
+                <div id="modal" class="modal-overlay hidden">
+                    <div class="modal-card">
+                        <button id="modalClose" class="modal-close">✕</button>
+
+                        <div id="modalContent"></div>
+                    </div>
+                </div>
+            </main>
+        </section>
+
+        <script src="app.js"></script>
+    </body>
+</html>
